@@ -278,7 +278,7 @@ void Force::reset_settings() {
   Serial.println("Reseting device settings:");
   FRC = 1;
   req = 2;
-  dispense_amount = 20;
+  dispense_amount = 4;
   dispense_delay = 4;
   timeout_length = 10;
   ratio = 1;
