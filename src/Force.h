@@ -113,7 +113,7 @@ class Force {
     // --- Trial functions--- //
     int FRC = 1;          // This is the unique # of the device
     bool PR = false;
-    void Tone();
+    void Tone(int frequency = 500, int duration = 200);
     void Click();
     void Timeout(int timeout_length);
     int timeout_length = 10;
