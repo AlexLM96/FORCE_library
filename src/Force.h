@@ -28,8 +28,8 @@
 #define TFT_RST     -1    // TFT display shield
 #define TFT_CS      5     // TFT display shield
 #define TFT_DC      6     // TFT display shield
-#define DOUT        13    // Load cell1
-#define CLK         12    // Load cell1
+#define DOUT        12    // Load cell1
+#define CLK         13    // Load cell1
 #define DOUT2       11    // Load cell2
 #define CLK2        9     // Load cell2
 #define LICKOMETER  18    // Lick-o-meter
