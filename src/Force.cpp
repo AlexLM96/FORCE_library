@@ -95,7 +95,7 @@ void Force::Timeout(int timeout_length) {
 // Sound Functions 
 /////////////////////////////////////////////////////////////////////////
 void Force::Tone(int frequency, int duration) {
-  tone(A5, 500, 200);
+  tone(A5, frequency, duration);
 }
 
 void Force::Click() {
