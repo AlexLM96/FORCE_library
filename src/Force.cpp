@@ -60,15 +60,17 @@ void Force::Dispense() {
       tft.fillRect(12, 0, 38, 24, ST7735_BLACK); // clear the text after label
     }
   }
-  digitalWrite(SOLENOID, HIGH);
-  digitalWrite(A2, HIGH); // A2 will be "reward dispensed" pin
-  digitalWrite(13, HIGH); // RED LED
-  delay (dispense_amount); //how long to open solenoid?
-  digitalWrite(SOLENOID, LOW);
+  digitalWrite(A2,HIGH); //A2 will be "reward dispensed" pin
+  digitalWrite(13,HIGH); // RED LED
+  for (int i=0; i < 20; i++) {
+    digitalWrite(SOLENOID, HIGH);
+    delayMicroseconds(100);
+    digitalWrite(SOLENOID, LOW);
+  }
   DateTime now = rtc.now();
   dispenseTime = now.unixtime();
   digitalWrite(A2, LOW);
-  digitalWrite(13, LOW); // RED LED
+  digitalWrite(13, LOW);
   pressTime = millis();
   pressLength = 0;
   dispensing = false;
@@ -200,7 +202,7 @@ void Force::load_settings() {
 
       FRC = settings_recalled[0];
       req = settings_recalled[1];
-      dispense_amount = settings_recalled[2];
+      dispense_amount = 2000;
       dispense_delay = settings_recalled[3];
       timeout_length = settings_recalled[4] ;
       ratio = settings_recalled[5];
@@ -353,16 +355,16 @@ void Force::check_buttons() {
       pixels.show();
       digitalWrite(SOLENOID, HIGH);
       tft.setCursor(40, 50);  
-      tft.print("5..");
-      delay (1000);
-      tft.print("4..");
-      delay (1000);
-      tft.print("3..");
-      delay (1000);
-      tft.print("2..");
-      delay (1000);
-      tft.print("1..");
-      delay (1000);
+      tft.print("500");
+      delay (100);
+      tft.print("400");
+      delay (100);
+      tft.print("300");
+      delay (100);
+      tft.print("200");
+      delay (100);
+      tft.print("1");
+      delay (100);
       digitalWrite(SOLENOID, LOW);
       tft.fillScreen(ST77XX_BLACK);
     }

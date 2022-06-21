@@ -102,7 +102,7 @@ class Force {
 
     // --- Solenoid functions --- //
     float dispense_time = 0;
-    int dispense_amount = 20;
+    int dispense_amount = 2000;
     void Dispense();
 
     // --- Lever functions --- //
